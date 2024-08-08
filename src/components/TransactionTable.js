@@ -3,7 +3,7 @@ import TransactionRow from './TransactionRow';
 
 //render table header
 
-function TransactionTable({transactions}) {
+function TransactionTable({transactions,onDelete}) {
   return (
     <table>
         <thead>
@@ -12,13 +12,19 @@ function TransactionTable({transactions}) {
                 <th>Description</th>
                 <th>Category</th>
                 <th>Amount</th>
-            </tr>
-        </thead>
-        <tbody>
+                <th>Actions</th> {/* New column for actions */}
+        </tr>
+      </thead>
+      <tbody>
         {transactions.map((transaction) => (
-          <TransactionRow key={transaction.id} transaction={transaction} />
+          <TransactionRow
+            key={transaction.id}
+            transaction={transaction}
+            onDelete={onDelete}
+          />
         ))}
-    </tbody>
+      </tbody>
+    
     </table>
   )
 }

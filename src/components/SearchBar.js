@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchBar({value,onChange}) {
+function SearchBar({value,onChange,className}) {
     //render search input field
   return (
     <input
@@ -8,6 +8,7 @@ function SearchBar({value,onChange}) {
       value={value}
       onChange={onChange}
       placeholder="Search transactions..."
+      className={className}
     />
 
   );

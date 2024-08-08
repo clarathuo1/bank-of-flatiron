@@ -16,8 +16,15 @@ function Home() {
     useEffect(() => {
         fetch('http://localhost:3000/transactions')
           .then(response => response.json())
-          .then(data => setTransactions(data));
-      }, []);
+          .then(data => {
+            const updatedData = data.map(transaction => ({
+              ...transaction,
+              amount: parseFloat(transaction.amount)
+          }));
+          setTransactions(updatedData);
+      });
+}, []);
+          
 
       //handle form submission to add a new transaction
       const handleSubmit = (newTransaction) => {
@@ -35,21 +42,39 @@ function Home() {
         setSearchTerm(event.target.value);
       };
 
+      //handle delete transaction
+      const handleDelete = (transactionId) => {
+        fetch(`http://localhost:3000/transactions/${transactionId}`, {
+          method: 'DELETE',
+        })
+          .then(response => response.json())
+          .then(() => setTransactions(transactions.filter(transaction => transaction.id !== transactionId)));
+      };
+
       //filter transactions based on search term
-    const filteredTransactions = transactions.filter((transaction) => {
-         return (
-         transaction.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        transaction.amount.toString().includes(searchTerm)
-            );
-          });
+    
+      const filteredTransactions = transactions.filter((transaction) => {
+        const description = transaction.description || '';
+        const amount = transaction.amount !== undefined ? transaction.amount.toString() : '';
+        const date = transaction.date || '';
+        const category = transaction.category || '';
+        
+        return (
+          description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            amount.includes(searchTerm) ||
+            date.includes(searchTerm) ||
+            category.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
 
           //render components
     return(
-        <div>
+        <div className="container">
       <h1>Bank Of Flatiron</h1>
-      <SearchBar value={searchTerm} onChange={handleSearch} />
+      <SearchBar value={searchTerm} onChange={handleSearch} className="search-bar"/>
       <TransactionForm onSubmit={handleSubmit} />
-      <TransactionTable transactions={filteredTransactions} />
+      <TransactionTable transactions={filteredTransactions} onDelete={handleDelete}  />
+
     </div>
     );
 
