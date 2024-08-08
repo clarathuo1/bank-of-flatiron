@@ -28,7 +28,7 @@ function Home() {
 
       //handle form submission to add a new transaction
       const handleSubmit = (newTransaction) => {
-        fetch('http://localhost:3000/transactions', {
+        fetch('https://flatiron-backend-three.vercel.app/transactions', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newTransaction),
@@ -44,7 +44,7 @@ function Home() {
 
       //handle delete transaction
       const handleDelete = (transactionId) => {
-        fetch(`http://localhost:3000/transactions/${transactionId}`, {
+        fetch(`https://flatiron-backend-three.vercel.app/transactions/${transactionId}`, {
           method: 'DELETE',
         })
           .then(response => response.json())
