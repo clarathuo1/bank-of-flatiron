@@ -15,10 +15,10 @@ function TransactionTable({transactions}) {
             </tr>
         </thead>
         <tbody>
-            {transactions.map((transaction) => (
-                <TransactionRow key={transaction.id} transaction={transaction} />
-            ))}
-        </tbody>
+        {transactions.map((transaction) => (
+          <TransactionRow key={transaction.id} transaction={transaction} />
+        ))}
+    </tbody>
     </table>
   )
 }

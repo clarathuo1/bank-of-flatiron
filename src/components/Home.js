@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import React, { useState } from 'react'
+import React from 'react'
 import { useEffect } from 'react'
-import TransactionForm from '../components/TransactionForm'
-import TransactionTable from '../components/TransactionTable'
-import SearchBar from '../components/SearchBar'
+import TransactionForm from './TransactionForm'
+import TransactionTable from './TransactionTable'
+import SearchBar from './SearchBar'
 
 function Home() {
   
@@ -43,10 +43,10 @@ function Home() {
             );
           });
 
-          //rendr components
+          //render components
     return(
         <div>
-      <h1>Transaction Manager</h1>
+      <h1>Bank Of Flatiron</h1>
       <SearchBar value={searchTerm} onChange={handleSearch} />
       <TransactionForm onSubmit={handleSubmit} />
       <TransactionTable transactions={filteredTransactions} />
@@ -54,6 +54,7 @@ function Home() {
     );
 
 }
+export default Home;
 
 
 
