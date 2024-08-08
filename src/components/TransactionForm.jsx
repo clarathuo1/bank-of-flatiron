@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
 
+
 function TransactionForm({onSubmit}) {
     //initialize state for description and amount
-    const [description, setDescription] = React.useState('');
-    const [amount, setAmount] = React.useState('');
+    const [description, setDescription] = useState('');
+    const [amount, setAmount] = useState('');
 
     //handle form submission
     const handleSubmit = (e) => {
