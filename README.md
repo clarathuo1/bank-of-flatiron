@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Bank of Flatiron
+Welcome to the Bank of Flatiron! This React application allows users to view, add, and filter recent bank transactions. It utilizes a backend API to persist transactions and provides a seamless experience for managing financial data.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+- Transaction Table: View a table of recent bank transactions.
+- Add New Transaction: Fill out a form to add a new transaction, which will be reflected in the table and saved to the backend API.
+- Search Transactions: Filter transactions by typing into the search bar. The table will dynamically update to show only transactions that match the search term.
+## Technologies Used
+- React: For building the user interface.
+JSON Server: To simulate a backend API for transaction data.
+- Axios: For making HTTP requests to the JSON Server.
+## Getting Started
+### Prerequisites
+- Node.js and npm installed on your machine.
+- Create React App and JSON Server packages installed.
+- Setup
+- Clone the Repository
+git clone https://github.com/clarathuo1/bank-of-flatiron
+- cd bank-of-flatiron
+#### Set Up JSON Server
 
-## Available Scripts
+- Create a db.json file in the root of your project.
+- Paste the provided transaction data into db.json.
+json
 
-In the project directory, you can run:
+### Start the JSON Server:
 
-### `npm start`
+- Copy code
+npx json-server --watch db.json --port 3001
+- Set Up React Application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Install dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+- Copy code
+- npm install
+- Start the React development server:
+- Copy code
+npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Using the Application
+- Viewing Transactions: The main page will display a table of recent transactions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Adding a Transaction:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Fill out the form with the transaction details.
+- Click the "Add Transaction" button to submit.
+The new transaction will appear in the table and will be saved to the backend API.
+- Filtering Transactions:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
+- Use the search bar to enter a description keyword.
+The table will update to show only transactions that match the search term.
 ### Deployment
+- Frontend Deployment: Deploy the React application to a hosting service of your choice (e.g., Vercel, Netlify).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Backend Deployment: Deploy the JSON Server to a hosting service or use a similar solution to persist transaction data.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+- This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+- Create React App for scaffolding the React application.
+- JSON Server for providing a simple mock backend.
+
