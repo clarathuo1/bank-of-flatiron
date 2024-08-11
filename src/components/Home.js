@@ -14,7 +14,7 @@ function Home() {
     //fetch transactions
 
     useEffect(() => {
-        fetch('http://localhost:3000/transactions')
+        fetch('https://flatiron-backend-three.vercel.app/transactions')
           .then(response => response.json())
           .then(data => {
             const updatedData = data.map(transaction => ({
