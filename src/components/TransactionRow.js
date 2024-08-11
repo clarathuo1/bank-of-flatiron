@@ -16,7 +16,7 @@ function TransactionRow({transaction,onDelete}) {
         <td>{transaction.description}</td>
         <td>{transaction.category}</td>
         <td>{transaction.amount.toFixed(2)}</td>
-        <td>{formattedAmount}</td>
+        
       <td><button onClick={handleDelete}>Delete</button></td>
         
     </tr>
